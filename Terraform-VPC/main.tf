@@ -8,7 +8,7 @@ terraform {
 }
 
 locals {
-  AWS_REGION_DR = "us-east-2"
+  AWS_REGION_DR = "us-east-1"
 }
 
 provider "aws" {
@@ -17,6 +17,6 @@ provider "aws" {
 }
 
 resource "aws_vpc" "main_dr" {
-    cidr_block = "172.32.0.0/16"
+    cidr_block = "192.168.10.0/24"
     provider = aws.dr
 }
